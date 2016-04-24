@@ -1,0 +1,631 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9C42ECD1CCCE8450045DCCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C42ECB1CCCE8450045DCCD /* Main.storyboard */; };
+		A9C42ECF1CCCE8450045DCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C42ECE1CCCE8450045DCCD /* Assets.xcassets */; };
+		A9C42ED21CCCE8450045DCCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C42ED01CCCE8450045DCCD /* LaunchScreen.storyboard */; };
+		A9C42F061CCCE9E00045DCCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42EF41CCCE9E00045DCCD /* AppDelegate.m */; };
+		A9C42F071CCCE9E00045DCCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42EF51CCCE9E00045DCCD /* main.m */; };
+		A9C42F081CCCE9E00045DCCD /* HCSResizeImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42EFD1CCCE9E00045DCCD /* HCSResizeImageTool.m */; };
+		A9C42F091CCCE9E00045DCCD /* HCSSaveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42F011CCCE9E00045DCCD /* HCSSaveTool.m */; };
+		A9C42F0D1CCCE9FC0045DCCD /* HCSAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42F0B1CCCE9FC0045DCCD /* HCSAddCityViewController.m */; };
+		A9C42F0E1CCCE9FC0045DCCD /* HCSAddCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C42F0C1CCCE9FC0045DCCD /* HCSAddCityViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9C42EBF1CCCE8450045DCCD /* ZiXun Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZiXun Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C42ECC1CCCE8450045DCCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A9C42ECE1CCCE8450045DCCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9C42ED11CCCE8450045DCCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A9C42ED31CCCE8450045DCCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9C42EF31CCCE9E00045DCCD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9C42EF41CCCE9E00045DCCD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9C42EF51CCCE9E00045DCCD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9C42EFC1CCCE9E00045DCCD /* HCSResizeImageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSResizeImageTool.h; sourceTree = "<group>"; };
+		A9C42EFD1CCCE9E00045DCCD /* HCSResizeImageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSResizeImageTool.m; sourceTree = "<group>"; };
+		A9C42F001CCCE9E00045DCCD /* HCSSaveTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSSaveTool.h; sourceTree = "<group>"; };
+		A9C42F011CCCE9E00045DCCD /* HCSSaveTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSSaveTool.m; sourceTree = "<group>"; };
+		A9C42F0A1CCCE9FC0045DCCD /* HCSAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSAddCityViewController.h; sourceTree = "<group>"; };
+		A9C42F0B1CCCE9FC0045DCCD /* HCSAddCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSAddCityViewController.m; sourceTree = "<group>"; };
+		A9C42F0C1CCCE9FC0045DCCD /* HCSAddCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCSAddCityViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9C42EBC1CCCE8450045DCCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9C42EB61CCCE8450045DCCD = {
+			isa = PBXGroup;
+			children = (
+				A9C42EC11CCCE8450045DCCD /* ZiXun Weather */,
+				A9C42EC01CCCE8450045DCCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9C42EC01CCCE8450045DCCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EBF1CCCE8450045DCCD /* ZiXun Weather.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9C42EC11CCCE8450045DCCD /* ZiXun Weather */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42ED91CCCE9E00045DCCD /* Classes */,
+				A9C42ECB1CCCE8450045DCCD /* Main.storyboard */,
+				A9C42ECE1CCCE8450045DCCD /* Assets.xcassets */,
+				A9C42ED01CCCE8450045DCCD /* LaunchScreen.storyboard */,
+				A9C42ED31CCCE8450045DCCD /* Info.plist */,
+				A9C42EC21CCCE8450045DCCD /* Supporting Files */,
+			);
+			path = "ZiXun Weather";
+			sourceTree = "<group>";
+		};
+		A9C42EC21CCCE8450045DCCD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9C42ED91CCCE9E00045DCCD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EDA1CCCE9E00045DCCD /* AddCity (添加城市) */,
+				A9C42EDE1CCCE9E00045DCCD /* CityManager (管理城市) */,
+				A9C42EE21CCCE9E00045DCCD /* Individuation (我) */,
+				A9C42EE61CCCE9E00045DCCD /* Main */,
+				A9C42EEA1CCCE9E00045DCCD /* NewFeatures */,
+				A9C42EEE1CCCE9E00045DCCD /* News (资讯) */,
+				A9C42EF21CCCE9E00045DCCD /* Other */,
+				A9C42EF61CCCE9E00045DCCD /* Setting (设置) */,
+				A9C42EFA1CCCE9E00045DCCD /* Tool (工具类) */,
+				A9C42F021CCCE9E00045DCCD /* Weather (天气) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A9C42EDA1CCCE9E00045DCCD /* AddCity (添加城市) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EDB1CCCE9E00045DCCD /* Control */,
+				A9C42EDC1CCCE9E00045DCCD /* Model */,
+				A9C42EDD1CCCE9E00045DCCD /* View */,
+			);
+			path = "AddCity (添加城市)";
+			sourceTree = "<group>";
+		};
+		A9C42EDB1CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42F0A1CCCE9FC0045DCCD /* HCSAddCityViewController.h */,
+				A9C42F0B1CCCE9FC0045DCCD /* HCSAddCityViewController.m */,
+				A9C42F0C1CCCE9FC0045DCCD /* HCSAddCityViewController.xib */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EDC1CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EDD1CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EDE1CCCE9E00045DCCD /* CityManager (管理城市) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EDF1CCCE9E00045DCCD /* Control */,
+				A9C42EE01CCCE9E00045DCCD /* Model */,
+				A9C42EE11CCCE9E00045DCCD /* View */,
+			);
+			path = "CityManager (管理城市)";
+			sourceTree = "<group>";
+		};
+		A9C42EDF1CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EE01CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EE11CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EE21CCCE9E00045DCCD /* Individuation (我) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EE31CCCE9E00045DCCD /* Control */,
+				A9C42EE41CCCE9E00045DCCD /* Model */,
+				A9C42EE51CCCE9E00045DCCD /* View */,
+			);
+			path = "Individuation (我)";
+			sourceTree = "<group>";
+		};
+		A9C42EE31CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EE41CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EE51CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EE61CCCE9E00045DCCD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EE71CCCE9E00045DCCD /* Control */,
+				A9C42EE81CCCE9E00045DCCD /* Model */,
+				A9C42EE91CCCE9E00045DCCD /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A9C42EE71CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EE81CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EE91CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EEA1CCCE9E00045DCCD /* NewFeatures */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EEB1CCCE9E00045DCCD /* Control */,
+				A9C42EEC1CCCE9E00045DCCD /* Model */,
+				A9C42EED1CCCE9E00045DCCD /* View */,
+			);
+			path = NewFeatures;
+			sourceTree = "<group>";
+		};
+		A9C42EEB1CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EEC1CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EED1CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EEE1CCCE9E00045DCCD /* News (资讯) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EEF1CCCE9E00045DCCD /* Control */,
+				A9C42EF01CCCE9E00045DCCD /* Model */,
+				A9C42EF11CCCE9E00045DCCD /* View */,
+			);
+			path = "News (资讯)";
+			sourceTree = "<group>";
+		};
+		A9C42EEF1CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EF01CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EF11CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EF21CCCE9E00045DCCD /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EF31CCCE9E00045DCCD /* AppDelegate.h */,
+				A9C42EF41CCCE9E00045DCCD /* AppDelegate.m */,
+				A9C42EF51CCCE9E00045DCCD /* main.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		A9C42EF61CCCE9E00045DCCD /* Setting (设置) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EF71CCCE9E00045DCCD /* Control */,
+				A9C42EF81CCCE9E00045DCCD /* Model */,
+				A9C42EF91CCCE9E00045DCCD /* View */,
+			);
+			path = "Setting (设置)";
+			sourceTree = "<group>";
+		};
+		A9C42EF71CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42EF81CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42EF91CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9C42EFA1CCCE9E00045DCCD /* Tool (工具类) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EFB1CCCE9E00045DCCD /* HCSResizeImageTool（拉伸图片工具类） */,
+				A9C42EFE1CCCE9E00045DCCD /* HCSRootTool(根控制器工具类) */,
+				A9C42EFF1CCCE9E00045DCCD /* HCSSaveTool(存储工具类) */,
+			);
+			path = "Tool (工具类)";
+			sourceTree = "<group>";
+		};
+		A9C42EFB1CCCE9E00045DCCD /* HCSResizeImageTool（拉伸图片工具类） */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42EFC1CCCE9E00045DCCD /* HCSResizeImageTool.h */,
+				A9C42EFD1CCCE9E00045DCCD /* HCSResizeImageTool.m */,
+			);
+			path = "HCSResizeImageTool（拉伸图片工具类）";
+			sourceTree = "<group>";
+		};
+		A9C42EFE1CCCE9E00045DCCD /* HCSRootTool(根控制器工具类) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "HCSRootTool(根控制器工具类)";
+			sourceTree = "<group>";
+		};
+		A9C42EFF1CCCE9E00045DCCD /* HCSSaveTool(存储工具类) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42F001CCCE9E00045DCCD /* HCSSaveTool.h */,
+				A9C42F011CCCE9E00045DCCD /* HCSSaveTool.m */,
+			);
+			path = "HCSSaveTool(存储工具类)";
+			sourceTree = "<group>";
+		};
+		A9C42F021CCCE9E00045DCCD /* Weather (天气) */ = {
+			isa = PBXGroup;
+			children = (
+				A9C42F031CCCE9E00045DCCD /* Control */,
+				A9C42F041CCCE9E00045DCCD /* Model */,
+				A9C42F051CCCE9E00045DCCD /* View */,
+			);
+			path = "Weather (天气)";
+			sourceTree = "<group>";
+		};
+		A9C42F031CCCE9E00045DCCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		A9C42F041CCCE9E00045DCCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9C42F051CCCE9E00045DCCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9C42EBE1CCCE8450045DCCD /* ZiXun Weather */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9C42ED61CCCE8450045DCCD /* Build configuration list for PBXNativeTarget "ZiXun Weather" */;
+			buildPhases = (
+				A9C42EBB1CCCE8450045DCCD /* Sources */,
+				A9C42EBC1CCCE8450045DCCD /* Frameworks */,
+				A9C42EBD1CCCE8450045DCCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ZiXun Weather";
+			productName = "ZiXun Weather";
+			productReference = A9C42EBF1CCCE8450045DCCD /* ZiXun Weather.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9C42EB71CCCE8450045DCCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HCS;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = xiaomage;
+				TargetAttributes = {
+					A9C42EBE1CCCE8450045DCCD = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = A9C42EBA1CCCE8450045DCCD /* Build configuration list for PBXProject "ZiXun Weather" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A9C42EB61CCCE8450045DCCD;
+			productRefGroup = A9C42EC01CCCE8450045DCCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9C42EBE1CCCE8450045DCCD /* ZiXun Weather */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9C42EBD1CCCE8450045DCCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C42F0E1CCCE9FC0045DCCD /* HCSAddCityViewController.xib in Resources */,
+				A9C42ED21CCCE8450045DCCD /* LaunchScreen.storyboard in Resources */,
+				A9C42ECF1CCCE8450045DCCD /* Assets.xcassets in Resources */,
+				A9C42ECD1CCCE8450045DCCD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9C42EBB1CCCE8450045DCCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9C42F081CCCE9E00045DCCD /* HCSResizeImageTool.m in Sources */,
+				A9C42F0D1CCCE9FC0045DCCD /* HCSAddCityViewController.m in Sources */,
+				A9C42F071CCCE9E00045DCCD /* main.m in Sources */,
+				A9C42F061CCCE9E00045DCCD /* AppDelegate.m in Sources */,
+				A9C42F091CCCE9E00045DCCD /* HCSSaveTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A9C42ECB1CCCE8450045DCCD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9C42ECC1CCCE8450045DCCD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A9C42ED01CCCE8450045DCCD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9C42ED11CCCE8450045DCCD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9C42ED41CCCE8450045DCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A9C42ED51CCCE8450045DCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9C42ED71CCCE8450045DCCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = "ZiXun Weather/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.ZiXun-Weather";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A9C42ED81CCCE8450045DCCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				INFOPLIST_FILE = "ZiXun Weather/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.ZiXun-Weather";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9C42EBA1CCCE8450045DCCD /* Build configuration list for PBXProject "ZiXun Weather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9C42ED41CCCE8450045DCCD /* Debug */,
+				A9C42ED51CCCE8450045DCCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9C42ED61CCCE8450045DCCD /* Build configuration list for PBXNativeTarget "ZiXun Weather" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9C42ED71CCCE8450045DCCD /* Debug */,
+				A9C42ED81CCCE8450045DCCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9C42EB71CCCE8450045DCCD /* Project object */;
+}
