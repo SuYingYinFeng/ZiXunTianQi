@@ -8,6 +8,7 @@
 
 #import "HCSAddCityViewController.h"
 #import "HCSResizeImageTool.h"
+#import "HCSearchCityViewController.h"
 
 #define HCSSearchViewSize self.hcs_searchView.bounds.size
 #define HCSColorWith(R,G,B) [UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:1]
@@ -21,6 +22,8 @@ static CGFloat const LabelHeight = 30;
 @property (weak, nonatomic) IBOutlet UIImageView *hcs_searchView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *hcs_scrollView;
+
+@property (weak, nonatomic) UITextField *hcs_TextField;
 
 @end
 
@@ -69,13 +72,19 @@ static CGFloat const LabelHeight = 30;
     //SearchView背景图片
     UIImage *hcs_image = [UIImage imageNamed:@"city_searchbar_background"];
     hcs_image = [hcs_image stretchableImageWithLeftCapWidth:hcs_image.size.width * 0.3 topCapHeight:hcs_image.size.height * 0.5];
+
     self.hcs_searchView.image = hcs_image;
     self.hcs_searchView.userInteractionEnabled = YES;
     
     //搜索内部TextField
-    UITextField *hcs_TextField = [[UITextField alloc] initWithFrame:CGRectMake(HCSSearchViewSize.width * 0.05, 0, HCSSearchViewSize.width * 0.75, HCSSearchViewSize.height)];
+    UITextField *hcs_TextField = [[UITextField alloc] initWithFrame:CGRectMake(HCSSearchViewSize.width * 0.05, 0, HCSSearchViewSize.width * 0.95 , HCSSearchViewSize.height)];
     hcs_TextField.placeholder = @"搜索城市";
+//    hcs_TextField.borderStyle = UITextBorderStyleRoundedRect;
     [self.hcs_searchView addSubview:hcs_TextField];
+    self.hcs_TextField = hcs_TextField;
+    [hcs_TextField addTarget:self action:@selector(SearchCityViewControllermodel) forControlEvents:UIControlEventEditingDidBegin];
+    
+    
     
     //热门ContentView
     UIView *hcs_View = [[UIView alloc] init];
@@ -182,10 +191,23 @@ static CGFloat const LabelHeight = 30;
         [hotResortView addSubview:resortButton];
         
     }
-    
 
 }
 
+- (void)SearchCityViewControllermodel
+{
+    HCSearchCityViewController *seaechCityVC = [[HCSearchCityViewController alloc] init];
+    seaechCityVC.view.backgroundColor = [UIColor cyanColor];
+    
+    [self presentViewController:seaechCityVC animated:YES completion:nil];
+
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.hcs_TextField endEditing:YES];
+//    [self becomeFirstResponder];
+}
 
 
 @end

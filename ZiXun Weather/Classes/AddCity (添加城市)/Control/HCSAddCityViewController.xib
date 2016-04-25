@@ -9,7 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HCSAddCityViewController">
             <connections>
                 <outlet property="hcs_scrollView" destination="NJD-8D-3Q2" id="DH7-5V-CdN"/>
-                <outlet property="hcs_searchView" destination="0Wy-NG-oQs" id="KMH-Lc-z0g"/>
+                <outlet property="hcs_searchView" destination="fs4-zK-4pv" id="qqU-R0-zyw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,14 +24,8 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-8D-3Q2">
                     <rect key="frame" x="0.0" y="222" width="375" height="444.5"/>
                 </scrollView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Wy-NG-oQs">
-                    <rect key="frame" x="30" y="92" width="315" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Go8-Km-CUj"/>
-                    </constraints>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天都有好心情 与地球友好相处" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyS-j3-EHl">
-                    <rect key="frame" x="124" y="41" width="243" height="21"/>
+                    <rect key="frame" x="124" y="35.5" width="243" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="IHT-DI-W64"/>
                         <constraint firstAttribute="width" constant="243" id="fR0-lv-WN1"/>
@@ -49,25 +43,36 @@
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="cvH-3M-oW3"/>
+                        </mask>
+                    </variation>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fs4-zK-4pv">
+                    <rect key="frame" x="30" y="91.5" width="315" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="mr7-2O-bdm"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="NJD-8D-3Q2" secondAttribute="bottom" id="1Yu-V0-ASz"/>
-                <constraint firstItem="Jn1-Pp-3m5" firstAttribute="trailing" secondItem="0Wy-NG-oQs" secondAttribute="trailing" id="47x-yn-MRF"/>
                 <constraint firstAttribute="trailing" secondItem="NJD-8D-3Q2" secondAttribute="trailing" id="5hZ-hZ-Fz7"/>
                 <constraint firstItem="NJD-8D-3Q2" firstAttribute="top" secondItem="NRL-Tb-yFE" secondAttribute="bottom" id="5kJ-qW-e0O"/>
                 <constraint firstItem="NRL-Tb-yFE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9op-xT-s9v"/>
-                <constraint firstItem="Jn1-Pp-3m5" firstAttribute="top" secondItem="0Wy-NG-oQs" secondAttribute="bottom" constant="45" id="GUI-Hc-lwI"/>
-                <constraint firstItem="0Wy-NG-oQs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="MG2-TA-ldX"/>
+                <constraint firstItem="fs4-zK-4pv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="HeN-lH-dup"/>
+                <constraint firstAttribute="trailing" secondItem="Jn1-Pp-3m5" secondAttribute="trailing" constant="30" id="JLX-W1-wz9"/>
                 <constraint firstItem="NJD-8D-3Q2" firstAttribute="height" secondItem="NRL-Tb-yFE" secondAttribute="height" multiplier="2" id="OJ2-Z3-hW4"/>
-                <constraint firstItem="0Wy-NG-oQs" firstAttribute="centerY" secondItem="NRL-Tb-yFE" secondAttribute="centerY" id="V01-bW-rCx"/>
+                <constraint firstItem="NJD-8D-3Q2" firstAttribute="top" secondItem="Jn1-Pp-3m5" secondAttribute="bottom" constant="24" id="bdk-3D-wVE"/>
                 <constraint firstItem="NRL-Tb-yFE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="clb-P4-bpL"/>
-                <constraint firstItem="0Wy-NG-oQs" firstAttribute="top" secondItem="GyS-j3-EHl" secondAttribute="bottom" constant="30" id="e92-fT-QgP"/>
+                <constraint firstItem="fs4-zK-4pv" firstAttribute="centerY" secondItem="NRL-Tb-yFE" secondAttribute="centerY" id="dwG-w1-IUb"/>
                 <constraint firstItem="NJD-8D-3Q2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iPA-qp-Cx7"/>
                 <constraint firstAttribute="trailing" secondItem="NRL-Tb-yFE" secondAttribute="trailing" id="jZI-9F-ia0"/>
-                <constraint firstAttribute="trailing" secondItem="0Wy-NG-oQs" secondAttribute="trailing" constant="30" id="n5W-g0-qyt"/>
                 <constraint firstAttribute="trailing" secondItem="GyS-j3-EHl" secondAttribute="trailing" constant="8" id="sbd-gO-bEz"/>
+                <constraint firstAttribute="trailing" secondItem="fs4-zK-4pv" secondAttribute="trailing" constant="30" id="seB-uD-jkV"/>
+                <constraint firstItem="fs4-zK-4pv" firstAttribute="top" secondItem="GyS-j3-EHl" secondAttribute="bottom" constant="35" id="v9g-JJ-Wle"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

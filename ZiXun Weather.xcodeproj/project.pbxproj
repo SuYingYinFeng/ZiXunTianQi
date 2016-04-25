@@ -16,6 +16,9 @@
 		A9C42F091CCCE9E00045DCCD /* HCSSaveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42F011CCCE9E00045DCCD /* HCSSaveTool.m */; };
 		A9C42F0D1CCCE9FC0045DCCD /* HCSAddCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42F0B1CCCE9FC0045DCCD /* HCSAddCityViewController.m */; };
 		A9C42F0E1CCCE9FC0045DCCD /* HCSAddCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C42F0C1CCCE9FC0045DCCD /* HCSAddCityViewController.xib */; };
+		A9C42F121CCD01530045DCCD /* HCSearchCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42F101CCD01530045DCCD /* HCSearchCityViewController.m */; };
+		A9C42F131CCD01530045DCCD /* HCSearchCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9C42F111CCD01530045DCCD /* HCSearchCityViewController.xib */; };
+		A9C42F161CCDABA50045DCCD /* HCSSearchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C42F151CCDABA50045DCCD /* HCSSearchButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,11 @@
 		A9C42F0A1CCCE9FC0045DCCD /* HCSAddCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSAddCityViewController.h; sourceTree = "<group>"; };
 		A9C42F0B1CCCE9FC0045DCCD /* HCSAddCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSAddCityViewController.m; sourceTree = "<group>"; };
 		A9C42F0C1CCCE9FC0045DCCD /* HCSAddCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCSAddCityViewController.xib; sourceTree = "<group>"; };
+		A9C42F0F1CCD01530045DCCD /* HCSearchCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSearchCityViewController.h; sourceTree = "<group>"; };
+		A9C42F101CCD01530045DCCD /* HCSearchCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSearchCityViewController.m; sourceTree = "<group>"; };
+		A9C42F111CCD01530045DCCD /* HCSearchCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCSearchCityViewController.xib; sourceTree = "<group>"; };
+		A9C42F141CCDABA50045DCCD /* HCSSearchButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSSearchButton.h; sourceTree = "<group>"; };
+		A9C42F151CCDABA50045DCCD /* HCSSearchButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSSearchButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,8 @@
 		A9C42EDD1CCCE9E00045DCCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A9C42F141CCDABA50045DCCD /* HCSSearchButton.h */,
+				A9C42F151CCDABA50045DCCD /* HCSSearchButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +157,9 @@
 		A9C42EDF1CCCE9E00045DCCD /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				A9C42F0F1CCD01530045DCCD /* HCSearchCityViewController.h */,
+				A9C42F101CCD01530045DCCD /* HCSearchCityViewController.m */,
+				A9C42F111CCD01530045DCCD /* HCSearchCityViewController.xib */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -456,6 +469,7 @@
 			files = (
 				A9C42F0E1CCCE9FC0045DCCD /* HCSAddCityViewController.xib in Resources */,
 				A9C42ED21CCCE8450045DCCD /* LaunchScreen.storyboard in Resources */,
+				A9C42F131CCD01530045DCCD /* HCSearchCityViewController.xib in Resources */,
 				A9C42ECF1CCCE8450045DCCD /* Assets.xcassets in Resources */,
 				A9C42ECD1CCCE8450045DCCD /* Main.storyboard in Resources */,
 			);
@@ -472,6 +486,8 @@
 				A9C42F0D1CCCE9FC0045DCCD /* HCSAddCityViewController.m in Sources */,
 				A9C42F071CCCE9E00045DCCD /* main.m in Sources */,
 				A9C42F061CCCE9E00045DCCD /* AppDelegate.m in Sources */,
+				A9C42F121CCD01530045DCCD /* HCSearchCityViewController.m in Sources */,
+				A9C42F161CCDABA50045DCCD /* HCSSearchButton.m in Sources */,
 				A9C42F091CCCE9E00045DCCD /* HCSSaveTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
