@@ -10,6 +10,14 @@
 #import "HCSResizeImageTool.h"
 #import "HCSearchCityViewController.h"
 
+//define this constant if you want to use Masonry without the 'mas_' prefix
+#define MAS_SHORTHAND
+
+//define this constant if you want to enable auto-boxing for default syntax
+#define MAS_SHORTHAND_GLOBALS
+
+#import "Masonry.h"
+
 #define HCSSearchViewSize self.hcs_searchView.bounds.size
 #define HCSColorWith(R,G,B) [UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:1]
 
@@ -83,13 +91,10 @@ static CGFloat const LabelHeight = 30;
     return _resortNameArray;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    NSInteger totalCityRow = (self.cityNameArray.count + 2) / maxCols;
 
-    NSInteger totalResortRow = (self.resortNameArray.count + 2) / maxCols;
-    
+//SearchView背景图片和搜索内部TextField
+- (void)setUpSearchView
+{
     //SearchView背景图片
     UIImage *hcs_image = [UIImage imageNamed:@"city_searchbar_background"];
     self.hcs_searchView.image = [hcs_image stretchableImageWithLeftCapWidth:hcs_image.size.width * 0.3 topCapHeight:hcs_image.size.height * 0.5];
@@ -101,37 +106,65 @@ static CGFloat const LabelHeight = 30;
     [self.hcs_searchView addSubview:hcs_TextField];
     self.hcs_TextField = hcs_TextField;
     [hcs_TextField addTarget:self action:@selector(SearchCityViewControllermodel) forControlEvents:UIControlEventEditingDidBegin];
+}
+
+
+- (UIView *)setUpHotCityViewWithContentView:(UIView *)contentView
+{
+    UIView *hcsView = [[UIView alloc] init];
+    hcsView.frame = CGRectMake(self.hcs_scrollView.frame.origin.x, self.hcs_scrollView.frame.origin.y, contentView.bounds.size.width, 300);
+
     
-    //热门ContentView
-    CGFloat hcs_ViewHeght = spaceViews * 8 + LabelHeight * 2 + (buttonHeight + spaceViews) * totalCityRow + (buttonHeight + spaceViews) * totalResortRow;
-    
-    UIView *hcs_View = [[UIView alloc] init];
-    hcs_View.frame = CGRectMake(0, 0, self.hcs_scrollView.bounds.size.width,hcs_ViewHeght);
-    [self.hcs_scrollView addSubview:hcs_View];
-    self.hcs_scrollView.contentSize = hcs_View.bounds.size;
-    self.hcs_scrollView.bounces = NO;
+    //fatherView
+    UIView *fatherView = [[UIView alloc] init];
+    CGFloat fatherViewW = hcsView.bounds.size.width * 0.8;
+    CGFloat fatherViewX = hcsView.bounds.size.width * 0.5 - fatherViewW * 0.5;
+    [hcsView addSubview:fatherView];
+    NSLog(@"%@",NSStringFromCGRect(hcsView.frame));
     
     //热门城市Label
     UILabel *hotCityLabel = [[UILabel alloc] init];
-    hotCityLabel.frame = CGRectMake(0, spaceViews * 2, hcs_View.bounds.size.width, LabelHeight);
     hotCityLabel.text = @"热门城市";
     hotCityLabel.textAlignment = NSTextAlignmentCenter;
     hotCityLabel.font = [UIFont systemFontOfSize:15];
     hotCityLabel.textColor = [UIColor grayColor];
-    [hcs_View addSubview:hotCityLabel];
+    [fatherView addSubview:hotCityLabel];
     
     //热门城市View
     UIView *hotCityView = [[UIView alloc] init];
-    CGFloat hotCityViewW = hcs_View.bounds.size.width * 0.8;
-    CGFloat hotCityViewX = hcs_View.center.x - hotCityViewW * 0.5;
-    CGFloat hotCityViewY = CGRectGetMaxY(hotCityLabel.frame);
-    CGFloat hotCityViewH = (spaceViews + buttonHeight) * totalCityRow + spaceViews;
-    hotCityView.frame = CGRectMake(hotCityViewX, hotCityViewY, hotCityViewW, hotCityViewH);
-    [hcs_View addSubview:hotCityView];
+    NSInteger totalCityRow = (self.cityNameArray.count + 2) / maxCols;
+    CGFloat hotCityViewH = (spaceViews + buttonHeight) * totalCityRow;
+    [fatherView addSubview:hotCityView];
+    
+    CGFloat fatherViewHeight = hotCityViewH + LabelHeight + spaceViews + 3;
+    
+    //添加约束fatherView
+    [fatherView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(hcsView.left).offset(fatherViewX);
+        make.top.equalTo(hcsView.top).offset(spaceViews * 2);
+        make.width.equalTo(fatherViewW);
+        make.height.equalTo(fatherViewHeight);
+    }];
+    
+    //添加约束hotCityLabel
+    [hotCityLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(fatherView.left);
+        make.top.equalTo(fatherView.top);
+        make.width.equalTo(fatherView.width);
+        make.height.equalTo(LabelHeight);
+    }];
+    
+    //添加约束hotCityView
+    [hotCityView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(fatherView.left);
+        make.top.equalTo(hotCityLabel.bottom).offset(spaceViews);
+        make.width.equalTo(fatherView.width);
+        make.height.equalTo(hotCityViewH);
+    }];
     
     //热门城市按钮
     NSInteger totalCount = self.cityNameArray.count;
-    CGFloat buttonW = (hotCityView.bounds.size.width - (maxCols + 1) * spaceViews) / maxCols;
+    CGFloat buttonW = (fatherViewW - (maxCols + 1) * spaceViews) / maxCols;
     
     for (NSInteger i = 0 ; i < totalCount; i++) {
         
@@ -142,8 +175,9 @@ static CGFloat const LabelHeight = 30;
         
         UIButton *cityButton = [UIButton buttonWithType:UIButtonTypeCustom];
         cityButton.frame = CGRectMake(buttonX, buttonY, buttonW, buttonHeight);
+        NSLog(@"%@",NSStringFromCGRect(cityButton.frame));
         cityButton.tag = i;
-        
+
         NSString *cityNameStr = self.cityNameArray[i];
         
         [cityButton setBackgroundImage:[HCSResizeImageTool HCSResizeImageWithImageName:@"add_city_btn_normal"] forState:UIControlStateNormal];
@@ -155,12 +189,36 @@ static CGFloat const LabelHeight = 30;
         [cityButton setTitle:cityNameStr forState:UIControlStateHighlighted];
         [cityButton setTitleColor:HCSColorWith(63, 169, 226) forState:UIControlStateHighlighted];
         [hotCityView addSubview:cityButton];
-        
+  
     }
+
+    return hcsView;
+
+}
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    //SearchView背景图片和搜索内部TextField
+    [self setUpSearchView];
+  
+    UIView *hcs_View = [[UIView alloc] init];
+    hcs_View.frame = CGRectMake(0, 0, self.hcs_scrollView.bounds.size.width,580);
+    [self.hcs_scrollView addSubview:hcs_View];
+    self.hcs_scrollView.contentSize = hcs_View.bounds.size;
+    self.hcs_scrollView.bounces = NO;
+    
+    //设置热门城市的View
+    UIView *fatherView = [self setUpHotCityViewWithContentView:hcs_View];
+    fatherView.frame = CGRectMake(0, 0, fatherView.bounds.size.width, fatherView.bounds.size.height);
+    NSLog(@"%@",NSStringFromCGRect(fatherView.frame));
+    [hcs_View addSubview:fatherView];
     
     //热门景点Label
     UILabel *hotResortLabel = [[UILabel alloc] init];
-    CGFloat hotResortLabelY = CGRectGetMaxY(hotCityView.frame);
+    CGFloat hotResortLabelY = CGRectGetMaxY(fatherView.frame);
     hotResortLabel.frame = CGRectMake(0, spaceViews * 2 + hotResortLabelY, hcs_View.bounds.size.width, LabelHeight);
     hotResortLabel.text = @"热门景区";
     hotResortLabel.textAlignment = NSTextAlignmentCenter;
@@ -171,9 +229,11 @@ static CGFloat const LabelHeight = 30;
     //热门景点View
     UIView *hotResortView = [[UIView alloc] init];
     CGFloat hotResortViewW = hcs_View.bounds.size.width * 0.8;
-    CGFloat hotResortViewX = hcs_View.center.x - hotCityViewW * 0.5;
+    CGFloat hotResortViewX = hcs_View.center.x - hotResortViewW * 0.5;
     CGFloat hotResortViewY = CGRectGetMaxY(hotResortLabel.frame);
    
+    NSInteger totalResortRow = (self.resortNameArray.count + 2) / maxCols;
+    
     CGFloat hotResortViewH = (spaceViews + buttonHeight) * totalResortRow + spaceViews;
     hotResortView.frame = CGRectMake(hotResortViewX, hotResortViewY, hotResortViewW, hotResortViewH);
     [hcs_View addSubview:hotResortView];
@@ -206,6 +266,8 @@ static CGFloat const LabelHeight = 30;
         [hotResortView addSubview:resortButton];
         
     }
+    
+    
 
 }
 
@@ -218,12 +280,6 @@ static CGFloat const LabelHeight = 30;
     [self presentViewController:seaechCityVC animated:NO completion:nil];
 
 }
-
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//    [self.hcs_TextField endEditing:YES];
-//}
 
 //不让这个控制器的键盘弹出
 - (void)textFieldDidBeginEditing:(UITextField *)textField
