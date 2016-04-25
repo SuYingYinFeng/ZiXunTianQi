@@ -36,6 +36,12 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+
+}
+- (IBAction)cancelButtonClick:(UIButton *)sender {
+    
+    [self.view endEditing:YES];
+    
     [self dismissViewControllerAnimated:YES completion:^{
         NSLog(@"dshjf");
     }];

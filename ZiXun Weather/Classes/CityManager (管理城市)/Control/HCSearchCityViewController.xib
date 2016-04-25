@@ -17,10 +17,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchViewPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-UV-a5Q">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddCityPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-UV-a5Q">
                     <rect key="frame" x="0.0" y="0.5" width="375" height="133.5"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city_searchbar_background_active" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-7D-M43">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-7D-M43">
                     <rect key="frame" x="30" y="47" width="265" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Pf8-TU-mAQ"/>
@@ -32,6 +32,9 @@
                         <constraint firstAttribute="width" constant="30" id="0DY-eX-PeW"/>
                     </constraints>
                     <state key="normal" title="取消"/>
+                    <connections>
+                        <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="tbw-sZ-wEr"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -53,7 +56,6 @@
         </view>
     </objects>
     <resources>
-        <image name="city_searchbar_background_active" width="90" height="40"/>
-        <image name="searchViewPhoto" width="1280" height="1024"/>
+        <image name="AddCityPhoto" width="720" height="450"/>
     </resources>
 </document>
