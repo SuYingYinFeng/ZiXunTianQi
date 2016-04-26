@@ -19,7 +19,7 @@
 #import "Masonry.h"
 
 #define HCSSearchViewSize self.hcs_searchView.bounds.size
-#define HCSColorWith(R,G,B) [UIColor colorWithRed:R / 255.0 green:G / 255.0 blue:B / 255.0 alpha:1]
+
 
 static CGFloat const spaceViews = 10;
 static CGFloat const buttonHeight = 30;
@@ -120,7 +120,6 @@ static CGFloat const LabelHeight = 30;
     CGFloat fatherViewW = hcsView.bounds.size.width * 0.8;
     CGFloat fatherViewX = hcsView.bounds.size.width * 0.5 - fatherViewW * 0.5;
     [hcsView addSubview:fatherView];
-    NSLog(@"%@",NSStringFromCGRect(hcsView.frame));
     
     //热门城市Label
     UILabel *hotCityLabel = [[UILabel alloc] init];
@@ -136,7 +135,7 @@ static CGFloat const LabelHeight = 30;
     CGFloat hotCityViewH = (spaceViews + buttonHeight) * totalCityRow;
     [fatherView addSubview:hotCityView];
     
-    CGFloat fatherViewHeight = hotCityViewH + LabelHeight + spaceViews + 3;
+    CGFloat fatherViewHeight = hotCityViewH + LabelHeight + spaceViews * 3;
     
     //添加约束fatherView
     [fatherView makeConstraints:^(MASConstraintMaker *make) {
@@ -175,7 +174,6 @@ static CGFloat const LabelHeight = 30;
         
         UIButton *cityButton = [UIButton buttonWithType:UIButtonTypeCustom];
         cityButton.frame = CGRectMake(buttonX, buttonY, buttonW, buttonHeight);
-        NSLog(@"%@",NSStringFromCGRect(cityButton.frame));
         cityButton.tag = i;
 
         NSString *cityNameStr = self.cityNameArray[i];
@@ -213,7 +211,6 @@ static CGFloat const LabelHeight = 30;
     //设置热门城市的View
     UIView *fatherView = [self setUpHotCityViewWithContentView:hcs_View];
     fatherView.frame = CGRectMake(0, 0, fatherView.bounds.size.width, fatherView.bounds.size.height);
-    NSLog(@"%@",NSStringFromCGRect(fatherView.frame));
     [hcs_View addSubview:fatherView];
     
     //热门景点Label
@@ -275,6 +272,7 @@ static CGFloat const LabelHeight = 30;
 - (void)SearchCityViewControllermodel
 {
     HCSearchCityViewController *seaechCityVC = [[HCSearchCityViewController alloc] init];
+    
     seaechCityVC.view.backgroundColor = [UIColor cyanColor];
     
     [self presentViewController:seaechCityVC animated:NO completion:nil];

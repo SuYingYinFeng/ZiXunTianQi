@@ -32,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A99E22971CCF4FD400392810 /* ZiXun Weather.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZiXun Weather.pch"; sourceTree = "<group>"; };
 		A9C42EBF1CCCE8450045DCCD /* ZiXun Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZiXun Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C42ECC1CCCE8450045DCCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9C42ECE1CCCE8450045DCCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -345,6 +346,7 @@
 				A9C42EF31CCCE9E00045DCCD /* AppDelegate.h */,
 				A9C42EF41CCCE9E00045DCCD /* AppDelegate.m */,
 				A9C42EF51CCCE9E00045DCCD /* main.m */,
+				A99E22971CCF4FD400392810 /* ZiXun Weather.pch */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -693,6 +695,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "ZiXun Weather/Classes/Other/ZiXun Weather.pch";
 				INFOPLIST_FILE = "ZiXun Weather/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -706,6 +710,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PREFIX_HEADER = "ZiXun Weather/Classes/Other/ZiXun Weather.pch";
 				INFOPLIST_FILE = "ZiXun Weather/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
