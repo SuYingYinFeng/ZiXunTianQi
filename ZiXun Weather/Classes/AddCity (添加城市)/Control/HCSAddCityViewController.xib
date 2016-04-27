@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="222" width="375" height="444.5"/>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天都有好心情 与地球友好相处" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyS-j3-EHl">
-                    <rect key="frame" x="124" y="35.5" width="243" height="21"/>
+                    <rect key="frame" x="124" y="50.5" width="243" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="IHT-DI-W64"/>
                         <constraint firstAttribute="width" constant="243" id="fR0-lv-WN1"/>
@@ -35,13 +35,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天空之蓝 你我有责" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-Pp-3m5">
-                    <rect key="frame" x="237" y="177" width="108" height="21"/>
+                    <rect key="frame" x="237" y="161.5" width="108" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="4TB-YE-PA4"/>
                         <constraint firstAttribute="width" constant="108" id="cvH-3M-oW3"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -65,14 +65,14 @@
                 <constraint firstItem="fs4-zK-4pv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="HeN-lH-dup"/>
                 <constraint firstAttribute="trailing" secondItem="Jn1-Pp-3m5" secondAttribute="trailing" constant="30" id="JLX-W1-wz9"/>
                 <constraint firstItem="NJD-8D-3Q2" firstAttribute="height" secondItem="NRL-Tb-yFE" secondAttribute="height" multiplier="2" id="OJ2-Z3-hW4"/>
-                <constraint firstItem="NJD-8D-3Q2" firstAttribute="top" secondItem="Jn1-Pp-3m5" secondAttribute="bottom" constant="24" id="bdk-3D-wVE"/>
+                <constraint firstItem="Jn1-Pp-3m5" firstAttribute="top" secondItem="fs4-zK-4pv" secondAttribute="bottom" constant="30" id="V5U-Np-RSf"/>
                 <constraint firstItem="NRL-Tb-yFE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="clb-P4-bpL"/>
                 <constraint firstItem="fs4-zK-4pv" firstAttribute="centerY" secondItem="NRL-Tb-yFE" secondAttribute="centerY" id="dwG-w1-IUb"/>
                 <constraint firstItem="NJD-8D-3Q2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iPA-qp-Cx7"/>
                 <constraint firstAttribute="trailing" secondItem="NRL-Tb-yFE" secondAttribute="trailing" id="jZI-9F-ia0"/>
                 <constraint firstAttribute="trailing" secondItem="GyS-j3-EHl" secondAttribute="trailing" constant="8" id="sbd-gO-bEz"/>
                 <constraint firstAttribute="trailing" secondItem="fs4-zK-4pv" secondAttribute="trailing" constant="30" id="seB-uD-jkV"/>
-                <constraint firstItem="fs4-zK-4pv" firstAttribute="top" secondItem="GyS-j3-EHl" secondAttribute="bottom" constant="35" id="v9g-JJ-Wle"/>
+                <constraint firstItem="fs4-zK-4pv" firstAttribute="top" secondItem="GyS-j3-EHl" secondAttribute="bottom" constant="20" id="v9g-JJ-Wle"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

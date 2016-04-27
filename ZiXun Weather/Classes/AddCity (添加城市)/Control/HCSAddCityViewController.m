@@ -112,13 +112,13 @@ static CGFloat const LabelHeight = 30;
 - (UIView *)setUpHotCityViewWithContentView:(UIView *)contentView
 {
     UIView *hcsView = [[UIView alloc] init];
-    hcsView.frame = CGRectMake(self.hcs_scrollView.frame.origin.x, self.hcs_scrollView.frame.origin.y, contentView.bounds.size.width, 300);
+    hcsView.frame = CGRectMake(self.hcs_scrollView.hcs_x, self.hcs_scrollView.hcs_y, contentView.hcs_width, 300);
 
     
     //fatherView
     UIView *fatherView = [[UIView alloc] init];
-    CGFloat fatherViewW = hcsView.bounds.size.width * 0.8;
-    CGFloat fatherViewX = hcsView.bounds.size.width * 0.5 - fatherViewW * 0.5;
+    CGFloat fatherViewW = hcsView.hcs_width * 0.8;
+    CGFloat fatherViewX = hcsView.hcs_width * 0.5 - fatherViewW * 0.5;
     [hcsView addSubview:fatherView];
     
     //热门城市Label
@@ -203,20 +203,20 @@ static CGFloat const LabelHeight = 30;
     [self setUpSearchView];
   
     UIView *hcs_View = [[UIView alloc] init];
-    hcs_View.frame = CGRectMake(0, 0, self.hcs_scrollView.bounds.size.width,580);
+    hcs_View.frame = CGRectMake(0, 0, self.hcs_scrollView.hcs_width,580);
     [self.hcs_scrollView addSubview:hcs_View];
     self.hcs_scrollView.contentSize = hcs_View.bounds.size;
     self.hcs_scrollView.bounces = NO;
     
     //设置热门城市的View
     UIView *fatherView = [self setUpHotCityViewWithContentView:hcs_View];
-    fatherView.frame = CGRectMake(0, 0, fatherView.bounds.size.width, fatherView.bounds.size.height);
+    fatherView.frame = CGRectMake(0, 0, fatherView.hcs_width, fatherView.hcs_height);
     [hcs_View addSubview:fatherView];
     
     //热门景点Label
     UILabel *hotResortLabel = [[UILabel alloc] init];
     CGFloat hotResortLabelY = CGRectGetMaxY(fatherView.frame);
-    hotResortLabel.frame = CGRectMake(0, spaceViews * 2 + hotResortLabelY, hcs_View.bounds.size.width, LabelHeight);
+    hotResortLabel.frame = CGRectMake(0, spaceViews * 2 + hotResortLabelY, hcs_View.hcs_width, LabelHeight);
     hotResortLabel.text = @"热门景区";
     hotResortLabel.textAlignment = NSTextAlignmentCenter;
     hotResortLabel.font = [UIFont systemFontOfSize:15];
@@ -225,7 +225,7 @@ static CGFloat const LabelHeight = 30;
     
     //热门景点View
     UIView *hotResortView = [[UIView alloc] init];
-    CGFloat hotResortViewW = hcs_View.bounds.size.width * 0.8;
+    CGFloat hotResortViewW = hcs_View.hcs_width * 0.8;
     CGFloat hotResortViewX = hcs_View.center.x - hotResortViewW * 0.5;
     CGFloat hotResortViewY = CGRectGetMaxY(hotResortLabel.frame);
    
@@ -237,7 +237,7 @@ static CGFloat const LabelHeight = 30;
     
     //热门景点按钮
     NSInteger totalResortCount = self.resortNameArray.count;
-    CGFloat buttonResortW = (hotResortView.bounds.size.width - (maxCols + 1) * spaceViews) / maxCols;
+    CGFloat buttonResortW = (hotResortView.hcs_width - (maxCols + 1) * spaceViews) / maxCols;
     
     for (NSInteger i = 0 ; i < totalResortCount; i++) {
         

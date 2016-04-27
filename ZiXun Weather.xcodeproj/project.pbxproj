@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A99E229B1CCFA04C00392810 /* HCSTipsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99E22991CCFA04C00392810 /* HCSTipsViewController.m */; };
+		A99E229C1CCFA04C00392810 /* HCSTipsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A99E229A1CCFA04C00392810 /* HCSTipsViewController.xib */; };
+		A99E229F1CCFA20500392810 /* HCSCityResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A99E229E1CCFA20500392810 /* HCSCityResultViewController.m */; };
+		A99E22A21CD0582100392810 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A99E22A11CD0582100392810 /* UIView+Frame.m */; };
 		A9C42ECD1CCCE8450045DCCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C42ECB1CCCE8450045DCCD /* Main.storyboard */; };
 		A9C42ECF1CCCE8450045DCCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C42ECE1CCCE8450045DCCD /* Assets.xcassets */; };
 		A9C42ED21CCCE8450045DCCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C42ED01CCCE8450045DCCD /* LaunchScreen.storyboard */; };
@@ -33,6 +37,13 @@
 
 /* Begin PBXFileReference section */
 		A99E22971CCF4FD400392810 /* ZiXun Weather.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZiXun Weather.pch"; sourceTree = "<group>"; };
+		A99E22981CCFA04C00392810 /* HCSTipsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSTipsViewController.h; sourceTree = "<group>"; };
+		A99E22991CCFA04C00392810 /* HCSTipsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSTipsViewController.m; sourceTree = "<group>"; };
+		A99E229A1CCFA04C00392810 /* HCSTipsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HCSTipsViewController.xib; sourceTree = "<group>"; };
+		A99E229D1CCFA20500392810 /* HCSCityResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCSCityResultViewController.h; sourceTree = "<group>"; };
+		A99E229E1CCFA20500392810 /* HCSCityResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCSCityResultViewController.m; sourceTree = "<group>"; };
+		A99E22A01CD0582100392810 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		A99E22A11CD0582100392810 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		A9C42EBF1CCCE8450045DCCD /* ZiXun Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ZiXun Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C42ECC1CCCE8450045DCCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9C42ECE1CCCE8450045DCCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,6 +207,11 @@
 				A9C42F0F1CCD01530045DCCD /* HCSearchCityViewController.h */,
 				A9C42F101CCD01530045DCCD /* HCSearchCityViewController.m */,
 				A9C42F111CCD01530045DCCD /* HCSearchCityViewController.xib */,
+				A99E22981CCFA04C00392810 /* HCSTipsViewController.h */,
+				A99E22991CCFA04C00392810 /* HCSTipsViewController.m */,
+				A99E229A1CCFA04C00392810 /* HCSTipsViewController.xib */,
+				A99E229D1CCFA20500392810 /* HCSCityResultViewController.h */,
+				A99E229E1CCFA20500392810 /* HCSCityResultViewController.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -451,6 +467,8 @@
 		A9C42F171CCE4FEB0045DCCD /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A99E22A01CD0582100392810 /* UIView+Frame.h */,
+				A99E22A11CD0582100392810 /* UIView+Frame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -558,6 +576,7 @@
 				A9C42F131CCD01530045DCCD /* HCSearchCityViewController.xib in Resources */,
 				A9C42ECF1CCCE8450045DCCD /* Assets.xcassets in Resources */,
 				A9C42ECD1CCCE8450045DCCD /* Main.storyboard in Resources */,
+				A99E229C1CCFA04C00392810 /* HCSTipsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,11 +590,14 @@
 				A9C42F391CCE4FFE0045DCCD /* NSArray+MASAdditions.m in Sources */,
 				A9C42F381CCE4FFE0045DCCD /* MASViewConstraint.m in Sources */,
 				A9C42F081CCCE9E00045DCCD /* HCSResizeImageTool.m in Sources */,
+				A99E229B1CCFA04C00392810 /* HCSTipsViewController.m in Sources */,
 				A9C42F351CCE4FFE0045DCCD /* MASConstraintMaker.m in Sources */,
 				A9C42F3B1CCE4FFE0045DCCD /* View+MASAdditions.m in Sources */,
 				A9C42F0D1CCCE9FC0045DCCD /* HCSAddCityViewController.m in Sources */,
 				A9C42F341CCE4FFE0045DCCD /* MASConstraint.m in Sources */,
+				A99E22A21CD0582100392810 /* UIView+Frame.m in Sources */,
 				A9C42F071CCCE9E00045DCCD /* main.m in Sources */,
+				A99E229F1CCFA20500392810 /* HCSCityResultViewController.m in Sources */,
 				A9C42F371CCE4FFE0045DCCD /* MASViewAttribute.m in Sources */,
 				A9C42F3A1CCE4FFE0045DCCD /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				A9C42F061CCCE9E00045DCCD /* AppDelegate.m in Sources */,

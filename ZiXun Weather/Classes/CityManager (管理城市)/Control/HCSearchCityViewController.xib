@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HCSearchCityViewController">
             <connections>
+                <outlet property="contentView" destination="MOf-F5-yv0" id="n3a-ot-Ubm"/>
                 <outlet property="searchView" destination="gZD-7D-M43" id="jWC-pM-Tvy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -36,15 +37,23 @@
                         <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="tbw-sZ-wEr"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOf-F5-yv0">
+                    <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Zn0-UV-a5Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Jn-Gi-ng7"/>
                 <constraint firstItem="4vx-yx-w5V" firstAttribute="leading" secondItem="gZD-7D-M43" secondAttribute="trailing" constant="20" id="83S-fn-9NO"/>
+                <constraint firstAttribute="bottom" secondItem="MOf-F5-yv0" secondAttribute="bottom" id="8Ai-b3-C8E"/>
                 <constraint firstAttribute="trailing" secondItem="Zn0-UV-a5Q" secondAttribute="trailing" id="8ho-aH-fzu"/>
+                <constraint firstAttribute="trailing" secondItem="MOf-F5-yv0" secondAttribute="trailing" id="GHX-3K-o3q"/>
                 <constraint firstItem="Zn0-UV-a5Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gmw-GA-gWo"/>
+                <constraint firstItem="MOf-F5-yv0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S8T-hz-UPT"/>
                 <constraint firstItem="4vx-yx-w5V" firstAttribute="height" secondItem="gZD-7D-M43" secondAttribute="height" id="Ssd-dW-NwE"/>
                 <constraint firstAttribute="trailing" secondItem="4vx-yx-w5V" secondAttribute="trailing" constant="30" id="Xk8-PG-9dy"/>
+                <constraint firstItem="MOf-F5-yv0" firstAttribute="top" secondItem="Zn0-UV-a5Q" secondAttribute="bottom" id="cVI-v9-eRk"/>
                 <constraint firstItem="4vx-yx-w5V" firstAttribute="centerY" secondItem="gZD-7D-M43" secondAttribute="centerY" id="oq0-f5-BLr"/>
                 <constraint firstItem="gZD-7D-M43" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="rbh-xr-nki"/>
                 <constraint firstItem="gZD-7D-M43" firstAttribute="centerY" secondItem="Zn0-UV-a5Q" secondAttribute="centerY" id="uBF-br-2LM"/>
