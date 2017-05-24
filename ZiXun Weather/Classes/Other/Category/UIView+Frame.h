@@ -14,5 +14,7 @@
 @property (nonatomic,assign) CGFloat hcs_y;
 @property (nonatomic,assign) CGFloat hcs_width;
 @property (nonatomic,assign) CGFloat hcs_height;
+@property (nonatomic,assign) CGFloat hcs_centerX;
+@property (nonatomic,assign) CGFloat hcs_centerY;
 
 @end

@@ -21,7 +21,10 @@
 
 + (id)objectForKey:(NSString *)key
 {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if (key && ![key isKindOfClass:[NSNull class]]) {
+        return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    }
+    return nil;
 }
 
 /**
@@ -32,7 +35,10 @@
  */
 + (void)setObject:(id)object forKey:(NSString *)key
 {
-    [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
+    if ([object isKindOfClass:[NSObject class]]) {
+        [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
+    }
+    NSLog(@"object = %@",object);
 }
 
 

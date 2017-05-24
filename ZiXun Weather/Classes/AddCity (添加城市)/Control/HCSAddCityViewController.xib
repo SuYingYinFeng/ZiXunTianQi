@@ -18,22 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddCityPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="NRL-Tb-yFE">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="NRL-Tb-yFE">
+                    <rect key="frame" x="0.0" y="0.5" width="375" height="222.5"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJD-8D-3Q2">
                     <rect key="frame" x="0.0" y="222" width="375" height="444.5"/>
                 </scrollView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天都有好心情 与地球友好相处" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyS-j3-EHl">
-                    <rect key="frame" x="124" y="50.5" width="243" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="IHT-DI-W64"/>
-                        <constraint firstAttribute="width" constant="243" id="fR0-lv-WN1"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.47345041580000002" green="1" blue="0.88561064099999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天空之蓝 你我有责" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-Pp-3m5">
                     <rect key="frame" x="237" y="161.5" width="108" height="21"/>
                     <constraints>
@@ -55,6 +45,16 @@
                         <constraint firstAttribute="height" constant="40" id="mr7-2O-bdm"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="每天都有好心情 与地球友好相处" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyS-j3-EHl">
+                    <rect key="frame" x="124" y="50" width="243" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="IHT-DI-W64"/>
+                        <constraint firstAttribute="width" constant="243" id="fR0-lv-WN1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.47345041580000002" green="1" blue="0.88561064099999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -79,6 +79,6 @@
         </view>
     </objects>
     <resources>
-        <image name="AddCityPhoto" width="720" height="450"/>
+        <image name="2.jpg" width="492" height="2"/>
     </resources>
 </document>

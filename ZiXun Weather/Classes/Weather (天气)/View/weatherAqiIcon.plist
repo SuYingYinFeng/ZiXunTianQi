@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>严重污染</key>
+	<string>weather_aqi_icon_level_6</string>
+	<key>中度污染</key>
+	<string>weather_aqi_icon_level_4</string>
+	<key>优</key>
+	<string>weather_aqi_icon_level_1</string>
+	<key>良</key>
+	<string>weather_aqi_icon_level_2</string>
+	<key>轻度污染</key>
+	<string>weather_aqi_icon_level_3</string>
+	<key>重度污染</key>
+	<string>weather_aqi_icon_level_5</string>
+</dict>
+</plist>

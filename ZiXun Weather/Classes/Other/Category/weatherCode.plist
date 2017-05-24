@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>100</key>
+	<string>w0</string>
+	<key>101</key>
+	<string>w1</string>
+	<key>102</key>
+	<string>w0</string>
+	<key>103</key>
+	<string>w1</string>
+	<key>104</key>
+	<string>w2</string>
+	<key>301</key>
+	<string>w3</string>
+	<key>302</key>
+	<string>w4</string>
+	<key>304</key>
+	<string>w5</string>
+	<key>404</key>
+	<string>w6</string>
+	<key>305</key>
+	<string>w7</string>
+	<key>306</key>
+	<string>w8</string>
+	<key>307</key>
+	<string>w9</string>
+	<key>310</key>
+	<string>w10</string>
+	<key>313</key>
+	<string>w13</string>
+	<key>400</key>
+	<string>w14</string>
+	<key>401</key>
+	<string>w15</string>
+	<key>402</key>
+	<string>w16</string>
+	<key>403</key>
+	<string>w17</string>
+	<key>500</key>
+	<string>w18</string>
+	<key>502</key>
+	<string>w19</string>
+	<key>503</key>
+	<string>w20</string>
+</dict>
+</plist>

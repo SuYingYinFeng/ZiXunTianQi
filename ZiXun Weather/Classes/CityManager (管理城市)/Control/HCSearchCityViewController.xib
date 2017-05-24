@@ -9,7 +9,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HCSearchCityViewController">
             <connections>
                 <outlet property="contentView" destination="MOf-F5-yv0" id="n3a-ot-Ubm"/>
-                <outlet property="searchView" destination="gZD-7D-M43" id="jWC-pM-Tvy"/>
+                <outlet property="searchView" destination="1LW-eX-qyb" id="XO8-Wu-SU5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,44 +19,49 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddCityPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Zn0-UV-a5Q">
-                    <rect key="frame" x="0.0" y="0.5" width="375" height="133.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZD-7D-M43">
-                    <rect key="frame" x="30" y="47" width="265" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="Pf8-TU-mAQ"/>
-                    </constraints>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vx-yx-w5V">
-                    <rect key="frame" x="315" y="47" width="30" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="30" id="0DY-eX-PeW"/>
-                    </constraints>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOf-F5-yv0">
+                    <rect key="frame" x="0.0" y="133" width="375" height="533.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搜索您的城市" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeG-sN-tGm">
+                    <rect key="frame" x="136" y="35" width="102" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-eY-zBt">
+                    <rect key="frame" x="315" y="30" width="30" height="30"/>
                     <state key="normal" title="取消"/>
                     <connections>
-                        <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="tbw-sZ-wEr"/>
+                        <action selector="cancelButtonClick:" destination="-1" eventType="touchUpInside" id="knv-7d-lkz"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOf-F5-yv0">
-                    <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LW-eX-qyb">
+                    <rect key="frame" x="0.0" y="89" width="375" height="44"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="xK4-NA-dga"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Zn0-UV-a5Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Jn-Gi-ng7"/>
-                <constraint firstItem="4vx-yx-w5V" firstAttribute="leading" secondItem="gZD-7D-M43" secondAttribute="trailing" constant="20" id="83S-fn-9NO"/>
                 <constraint firstAttribute="bottom" secondItem="MOf-F5-yv0" secondAttribute="bottom" id="8Ai-b3-C8E"/>
                 <constraint firstAttribute="trailing" secondItem="Zn0-UV-a5Q" secondAttribute="trailing" id="8ho-aH-fzu"/>
+                <constraint firstItem="MOf-F5-yv0" firstAttribute="top" secondItem="1LW-eX-qyb" secondAttribute="bottom" id="AXK-RI-kTL"/>
                 <constraint firstAttribute="trailing" secondItem="MOf-F5-yv0" secondAttribute="trailing" id="GHX-3K-o3q"/>
                 <constraint firstItem="Zn0-UV-a5Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Gmw-GA-gWo"/>
+                <constraint firstAttribute="trailing" secondItem="1LW-eX-qyb" secondAttribute="trailing" id="JZo-AT-HLW"/>
                 <constraint firstItem="MOf-F5-yv0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S8T-hz-UPT"/>
-                <constraint firstItem="4vx-yx-w5V" firstAttribute="height" secondItem="gZD-7D-M43" secondAttribute="height" id="Ssd-dW-NwE"/>
-                <constraint firstAttribute="trailing" secondItem="4vx-yx-w5V" secondAttribute="trailing" constant="30" id="Xk8-PG-9dy"/>
+                <constraint firstAttribute="trailing" secondItem="nF9-eY-zBt" secondAttribute="trailing" constant="30" id="bGt-Pf-jyz"/>
                 <constraint firstItem="MOf-F5-yv0" firstAttribute="top" secondItem="Zn0-UV-a5Q" secondAttribute="bottom" id="cVI-v9-eRk"/>
-                <constraint firstItem="4vx-yx-w5V" firstAttribute="centerY" secondItem="gZD-7D-M43" secondAttribute="centerY" id="oq0-f5-BLr"/>
-                <constraint firstItem="gZD-7D-M43" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="rbh-xr-nki"/>
-                <constraint firstItem="gZD-7D-M43" firstAttribute="centerY" secondItem="Zn0-UV-a5Q" secondAttribute="centerY" id="uBF-br-2LM"/>
+                <constraint firstItem="PeG-sN-tGm" firstAttribute="centerY" secondItem="nF9-eY-zBt" secondAttribute="centerY" id="eWC-Ok-f73"/>
+                <constraint firstItem="nF9-eY-zBt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="hCJ-tV-8kg"/>
+                <constraint firstItem="PeG-sN-tGm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nb4-7t-SCi"/>
+                <constraint firstItem="1LW-eX-qyb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uTq-mU-Pyl"/>
                 <constraint firstItem="Zn0-UV-a5Q" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.2" id="xxR-Dx-QP0"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

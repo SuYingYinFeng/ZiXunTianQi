@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HCSAboutMineViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_fog.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nZo-hP-9hw">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNy-2z-0et">
+                    <rect key="frame" x="30" y="100" width="315" height="200"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weatherIcon_72x72.png" translatesAutoresizingMaskIntoConstraints="NO" id="4LH-y2-luS">
+                            <rect key="frame" x="127" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="Qth-7J-B9o"/>
+                                <constraint firstAttribute="height" constant="60" id="hwv-Dx-JQh"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="资讯天气" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVT-U7-RuX">
+                            <rect key="frame" x="109" y="85" width="96" height="29"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0c-fl-34i">
+                            <rect key="frame" x="139.5" y="154" width="35" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="4LH-y2-luS" firstAttribute="top" secondItem="NNy-2z-0et" secondAttribute="top" id="941-eQ-3SJ"/>
+                        <constraint firstAttribute="height" constant="200" id="CRM-mv-U8v"/>
+                        <constraint firstItem="x0c-fl-34i" firstAttribute="centerX" secondItem="NNy-2z-0et" secondAttribute="centerX" id="JCT-3b-72t"/>
+                        <constraint firstItem="x0c-fl-34i" firstAttribute="top" secondItem="hVT-U7-RuX" secondAttribute="bottom" constant="40" id="QEI-22-9I7"/>
+                        <constraint firstItem="hVT-U7-RuX" firstAttribute="centerX" secondItem="NNy-2z-0et" secondAttribute="centerX" id="YTh-k6-fs9"/>
+                        <constraint firstItem="hVT-U7-RuX" firstAttribute="centerY" secondItem="NNy-2z-0et" secondAttribute="centerY" id="rHf-o9-MIr"/>
+                        <constraint firstItem="4LH-y2-luS" firstAttribute="centerX" secondItem="NNy-2z-0et" secondAttribute="centerX" id="u8n-7i-9hK"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱:562229342@qq.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Eo-eu-qdU">
+                    <rect key="frame" x="85.5" y="400" width="203" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by:黄灿森" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-yi-Wp4">
+                    <rect key="frame" x="150" y="460.5" width="74.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="a2b-yi-Wp4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="M5d-sf-4D6"/>
+                <constraint firstItem="NNy-2z-0et" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="NMN-lU-rCZ"/>
+                <constraint firstItem="nZo-hP-9hw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QZp-SX-eOj"/>
+                <constraint firstItem="4Eo-eu-qdU" firstAttribute="top" secondItem="NNy-2z-0et" secondAttribute="bottom" constant="100" id="STz-Q2-gL6"/>
+                <constraint firstItem="a2b-yi-Wp4" firstAttribute="top" secondItem="4Eo-eu-qdU" secondAttribute="bottom" constant="40" id="VIb-d1-kiz"/>
+                <constraint firstAttribute="trailing" secondItem="NNy-2z-0et" secondAttribute="trailing" constant="30" id="WDP-gs-cmW"/>
+                <constraint firstAttribute="trailing" secondItem="nZo-hP-9hw" secondAttribute="trailing" id="gry-sh-Ydg"/>
+                <constraint firstAttribute="bottom" secondItem="nZo-hP-9hw" secondAttribute="bottom" id="hDi-ch-VCB"/>
+                <constraint firstItem="nZo-hP-9hw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nj9-ko-Flr"/>
+                <constraint firstItem="NNy-2z-0et" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="qWO-Nf-3Hd"/>
+                <constraint firstItem="4Eo-eu-qdU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rJ2-SV-wRP"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="253.5" y="308.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_fog.jpg" width="320" height="568"/>
+        <image name="weatherIcon_72x72.png" width="72" height="72"/>
+    </resources>
+</document>

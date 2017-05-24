@@ -9,6 +9,10 @@
 #import "HCSAddCityViewController.h"
 #import "HCSResizeImageTool.h"
 #import "HCSearchCityViewController.h"
+#import "HCSTabBarController.h"
+#import "HCSCityDetailItem.h"
+#import <MJExtension/MJExtension.h>
+
 
 //define this constant if you want to use Masonry without the 'mas_' prefix
 #define MAS_SHORTHAND
@@ -26,44 +30,88 @@ static CGFloat const buttonHeight = 30;
 static NSInteger const maxCols = 3;
 static CGFloat const LabelHeight = 30;
 
-@interface HCSAddCityViewController ()<UITextFieldDelegate>
+@interface HCSAddCityViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *hcs_searchView;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *hcs_scrollView;
 
-@property (weak, nonatomic) UITextField *hcs_TextField;
-
 @property (nonatomic,strong) NSArray *cityNameArray;
 
 @property (nonatomic,strong) NSArray *resortNameArray;
+
+@property (nonatomic,strong) UIButton *selButton;
+
+@property (nonatomic,strong) NSArray *cityItemArray;
 
 @end
 
 @implementation HCSAddCityViewController
 
+
+
 //懒加载
 - (NSArray *)cityNameArray
 {
     if (_cityNameArray == nil) {
-        _cityNameArray = @[@"北京",
-                           @"上海",
-                           @"广州",
-                           @"深圳",
-                           @"哈尔滨",
-                           @"天津",
-                           @"重庆",
-                           @"沈阳",
-                           @"大连",
-                           @"长春",
-                           @"郑州",
-                           @"武汉",
-                           @"长沙",
-                           @"成都",
-                           @"南京",
-                           @"台北",
-                           @"福州",
-                           @"海口"];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"cityName" ofType:@"plist"];
+        
+        NSArray *ItemArray = [HCSCityDetailItem mj_objectArrayWithKeyValuesArray:[NSArray arrayWithContentsOfFile:path]];
+
+        self.cityItemArray =  [NSArray arrayWithObjects:ItemArray[1],
+                                                    ItemArray[16],
+                                                    ItemArray[1525],
+                                                    ItemArray[1558],
+                                                    ItemArray[75],
+                                                    ItemArray[78],
+                                                    ItemArray[96],
+                                                    ItemArray[28],
+                                                    ItemArray[41],
+                                                    ItemArray[231],
+                                                    ItemArray[236],
+                                                    ItemArray[180],
+                                                    ItemArray[563],
+                                                    ItemArray[413],
+                                                    ItemArray[805],
+                                                    ItemArray[1330],
+                                                    ItemArray[1422],
+                                                    ItemArray[1967],
+                                                    ItemArray[921],
+                                                    ItemArray[999],
+                                                    ItemArray[81],
+                                                    ItemArray[1079],
+                                                    ItemArray[1727],
+                                                    ItemArray[2132],nil];
+        
+        NSMutableArray *cityHotNameArray = [NSMutableArray array];
+        
+        for (HCSCityDetailItem *dictItem in _cityItemArray) {
+            [cityHotNameArray addObject:dictItem.city];
+        }
+
+        
+        
+        _cityNameArray = cityHotNameArray;
+        
+//        _cityNameArray = @[@"北京",
+//                           @"上海",
+//                           @"广州",
+//                           @"深圳",
+//                           @"哈尔滨",
+//                           @"天津",
+//                           @"重庆",
+//                           @"沈阳",
+//                           @"大连",
+//                           @"长春",
+//                           @"郑州",
+//                           @"武汉",
+//                           @"长沙",
+//                           @"成都",
+//                           @"南京",
+//                           @"台北",
+//                           @"福州",
+//                           @"海口"];
 
     }
     return _cityNameArray;
@@ -72,6 +120,8 @@ static CGFloat const LabelHeight = 30;
 - (NSArray *)resortNameArray
 {
     if (_resortNameArray == nil) {
+        
+
         _resortNameArray = @[@"故宫博物馆",
                              @"东方明珠塔",
                              @"黄果树瀑布",
@@ -99,20 +149,23 @@ static CGFloat const LabelHeight = 30;
     UIImage *hcs_image = [UIImage imageNamed:@"city_searchbar_background"];
     self.hcs_searchView.image = [hcs_image stretchableImageWithLeftCapWidth:hcs_image.size.width * 0.3 topCapHeight:hcs_image.size.height * 0.5];
     self.hcs_searchView.userInteractionEnabled = YES;
+   
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(HCSSearchViewSize.width * 0.05, 0, HCSSearchViewSize.width * 0.95 , HCSSearchViewSize.height);
+    [button setTitle:@"点击搜索城市" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, - HCSSearchViewSize.width * 0.6, 0, 0)];
+    [self.hcs_searchView addSubview:button];
+    [button addTarget:self action:@selector(SearchCityViewControllermodel) forControlEvents:UIControlEventTouchUpInside];
     
-    //搜索内部TextField
-    UITextField *hcs_TextField = [[UITextField alloc] initWithFrame:CGRectMake(HCSSearchViewSize.width * 0.05, 0, HCSSearchViewSize.width * 0.95 , HCSSearchViewSize.height)];
-    hcs_TextField.placeholder = @"搜索城市";
-    [self.hcs_searchView addSubview:hcs_TextField];
-    self.hcs_TextField = hcs_TextField;
-    [hcs_TextField addTarget:self action:@selector(SearchCityViewControllermodel) forControlEvents:UIControlEventEditingDidBegin];
+
 }
 
-
+//添加热门城市按钮
 - (UIView *)setUpHotCityViewWithContentView:(UIView *)contentView
 {
     UIView *hcsView = [[UIView alloc] init];
-    hcsView.frame = CGRectMake(self.hcs_scrollView.hcs_x, self.hcs_scrollView.hcs_y, contentView.hcs_width, 300);
+    hcsView.frame = CGRectMake(self.hcs_scrollView.hcs_x, self.hcs_scrollView.hcs_y, contentView.hcs_width, 400);
 
     
     //fatherView
@@ -187,14 +240,14 @@ static CGFloat const LabelHeight = 30;
         [cityButton setTitle:cityNameStr forState:UIControlStateHighlighted];
         [cityButton setTitleColor:HCSColorWith(63, 169, 226) forState:UIControlStateHighlighted];
         [hotCityView addSubview:cityButton];
+        
+        [cityButton addTarget:self action:@selector(cityButtonClick:) forControlEvents:UIControlEventTouchUpInside];
   
     }
 
     return hcsView;
 
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -212,59 +265,78 @@ static CGFloat const LabelHeight = 30;
     UIView *fatherView = [self setUpHotCityViewWithContentView:hcs_View];
     fatherView.frame = CGRectMake(0, 0, fatherView.hcs_width, fatherView.hcs_height);
     [hcs_View addSubview:fatherView];
+//
+//    //热门景点Label
+//    UILabel *hotResortLabel = [[UILabel alloc] init];
+//    CGFloat hotResortLabelY = CGRectGetMaxY(fatherView.frame);
+//    hotResortLabel.frame = CGRectMake(0, spaceViews * 2 + hotResortLabelY, hcs_View.hcs_width, LabelHeight);
+//    hotResortLabel.text = @"热门景区";
+//    hotResortLabel.textAlignment = NSTextAlignmentCenter;
+//    hotResortLabel.font = [UIFont systemFontOfSize:15];
+//    hotResortLabel.textColor = [UIColor grayColor];
+//    [hcs_View addSubview:hotResortLabel];
+//    
+//    //热门景点View
+//    UIView *hotResortView = [[UIView alloc] init];
+//    CGFloat hotResortViewW = hcs_View.hcs_width * 0.8;
+//    CGFloat hotResortViewX = hcs_View.center.x - hotResortViewW * 0.5;
+//    CGFloat hotResortViewY = CGRectGetMaxY(hotResortLabel.frame);
+//   
+//    NSInteger totalResortRow = (self.resortNameArray.count + 2) / maxCols;
+//    
+//    CGFloat hotResortViewH = (spaceViews + buttonHeight) * totalResortRow + spaceViews;
+//    hotResortView.frame = CGRectMake(hotResortViewX, hotResortViewY, hotResortViewW, hotResortViewH);
+//    [hcs_View addSubview:hotResortView];
+//    
+//    //热门景点按钮
+//    NSInteger totalResortCount = self.resortNameArray.count;
+//    CGFloat buttonResortW = (hotResortView.hcs_width - (maxCols + 1) * spaceViews) / maxCols;
+//    
+//    for (NSInteger i = 0 ; i < totalResortCount; i++) {
+//        
+//        NSInteger col = i % maxCols;
+//        CGFloat buttonResortX = (spaceViews + buttonResortW) * col + spaceViews;
+//        NSInteger row = i / maxCols;
+//        CGFloat buttonResortY = (spaceViews + buttonHeight) * row + spaceViews;
+//        
+//        UIButton *resortButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        resortButton.frame = CGRectMake(buttonResortX, buttonResortY, buttonResortW, buttonHeight);
+//        resortButton.tag = i + 100;
+//        
+//        NSString *resortNameStr = self.resortNameArray[i];
+//        
+//        [resortButton setBackgroundImage:[HCSResizeImageTool HCSResizeImageWithImageName:@"add_city_btn_normal"] forState:UIControlStateNormal];
+//        [resortButton setTitle:resortNameStr forState:UIControlStateNormal];
+//        resortButton.titleLabel.font = [UIFont systemFontOfSize:15];
+//        [resortButton setTitleColor:HCSColorWith(121, 126, 140) forState:UIControlStateNormal];
+//        
+//        [resortButton setBackgroundImage:[HCSResizeImageTool HCSResizeImageWithImageName:@"add_city_btn_select"] forState:UIControlStateHighlighted];
+//        [resortButton setTitle:resortNameStr forState:UIControlStateHighlighted];
+//        [resortButton setTitleColor:HCSColorWith(63, 169, 226) forState:UIControlStateHighlighted];
+//        [hotResortView addSubview:resortButton];
+//        
+//        [resortButton addTarget:self action:@selector(cityButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//    }
+//
+}
+
+
+- (void)cityButtonClick:(UIButton *)button
+{
     
-    //热门景点Label
-    UILabel *hotResortLabel = [[UILabel alloc] init];
-    CGFloat hotResortLabelY = CGRectGetMaxY(fatherView.frame);
-    hotResortLabel.frame = CGRectMake(0, spaceViews * 2 + hotResortLabelY, hcs_View.hcs_width, LabelHeight);
-    hotResortLabel.text = @"热门景区";
-    hotResortLabel.textAlignment = NSTextAlignmentCenter;
-    hotResortLabel.font = [UIFont systemFontOfSize:15];
-    hotResortLabel.textColor = [UIColor grayColor];
-    [hcs_View addSubview:hotResortLabel];
     
-    //热门景点View
-    UIView *hotResortView = [[UIView alloc] init];
-    CGFloat hotResortViewW = hcs_View.hcs_width * 0.8;
-    CGFloat hotResortViewX = hcs_View.center.x - hotResortViewW * 0.5;
-    CGFloat hotResortViewY = CGRectGetMaxY(hotResortLabel.frame);
-   
-    NSInteger totalResortRow = (self.resortNameArray.count + 2) / maxCols;
+    HCSTabBarController *tabBarVc = [[HCSTabBarController alloc] init];
     
-    CGFloat hotResortViewH = (spaceViews + buttonHeight) * totalResortRow + spaceViews;
-    hotResortView.frame = CGRectMake(hotResortViewX, hotResortViewY, hotResortViewW, hotResortViewH);
-    [hcs_View addSubview:hotResortView];
+    HCSCityDetailItem *cityItem = _cityItemArray[button.tag];
     
-    //热门景点按钮
-    NSInteger totalResortCount = self.resortNameArray.count;
-    CGFloat buttonResortW = (hotResortView.hcs_width - (maxCols + 1) * spaceViews) / maxCols;
+    NSMutableArray *mutableArray = [NSMutableArray arrayWithObjects:cityItem.city,cityItem.cityE,cityItem.ID,cityItem.prov, nil];
     
-    for (NSInteger i = 0 ; i < totalResortCount; i++) {
-        
-        NSInteger col = i % maxCols;
-        CGFloat buttonResortX = (spaceViews + buttonResortW) * col + spaceViews;
-        NSInteger row = i / maxCols;
-        CGFloat buttonResortY = (spaceViews + buttonHeight) * row + spaceViews;
-        
-        UIButton *resortButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        resortButton.frame = CGRectMake(buttonResortX, buttonResortY, buttonResortW, buttonHeight);
-        resortButton.tag = i + 100;
-        
-        NSString *resortNameStr = self.resortNameArray[i];
-        
-        [resortButton setBackgroundImage:[HCSResizeImageTool HCSResizeImageWithImageName:@"add_city_btn_normal"] forState:UIControlStateNormal];
-        [resortButton setTitle:resortNameStr forState:UIControlStateNormal];
-        resortButton.titleLabel.font = [UIFont systemFontOfSize:15];
-        [resortButton setTitleColor:HCSColorWith(121, 126, 140) forState:UIControlStateNormal];
-        
-        [resortButton setBackgroundImage:[HCSResizeImageTool HCSResizeImageWithImageName:@"add_city_btn_select"] forState:UIControlStateHighlighted];
-        [resortButton setTitle:resortNameStr forState:UIControlStateHighlighted];
-        [resortButton setTitleColor:HCSColorWith(63, 169, 226) forState:UIControlStateHighlighted];
-        [hotResortView addSubview:resortButton];
-        
-    }
+    NSArray *cityArray = [NSArray arrayWithArray:mutableArray];
     
+    [HCSSaveTool setObject:cityArray forKey:@"cityItem"];
     
+    [UIApplication sharedApplication].keyWindow.rootViewController = tabBarVc;
 
 }
 
@@ -273,16 +345,10 @@ static CGFloat const LabelHeight = 30;
 {
     HCSearchCityViewController *seaechCityVC = [[HCSearchCityViewController alloc] init];
     
-    seaechCityVC.view.backgroundColor = [UIColor cyanColor];
+    seaechCityVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    [self presentViewController:seaechCityVC animated:NO completion:nil];
+    [self presentViewController:seaechCityVC animated:YES completion:nil];
 
-}
-
-//不让这个控制器的键盘弹出
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    [self.hcs_TextField endEditing:YES];
 }
 
 

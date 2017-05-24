@@ -10,4 +10,33 @@
 
 #import "UIView+Frame.h"
 
+#import "HCSSaveTool.h"
 
+#import "HCSResizeImageTool.h"
+
+#import "UITextField+Placeholder.h"
+
+#define HCSScreenW [UIScreen mainScreen].bounds.size.width
+#define HCSScreenH [UIScreen mainScreen].bounds.size.height
+/************************屏幕适配*********************************/
+#define iPhone6P (HCSScreenH == 736)
+#define iPhone6 (HCSScreenH == 667)
+#define iPhone5 (HCSScreenH == 568)
+#define iPhone4 (HCSScreenH == 480)
+
+/************************屏幕适配*********************************/
+
+
+
+#define HCSFunc HCSLog(@"%s",__func__)
+
+/**********************打印是否打包***********************************/
+#ifdef DEBUG // 调试
+#define HCSLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define HCSLog(...)
+
+#endif
+/**********************打印是否打包***********************************/
